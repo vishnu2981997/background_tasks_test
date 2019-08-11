@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class MultiProcessingConfig(AppConfig):
-    name = 'multi_processing'
+    name = 'multi_processing_test'
