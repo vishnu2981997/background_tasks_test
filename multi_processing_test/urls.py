@@ -5,8 +5,8 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.home, name="home"),
-
+    path('', views.ImportRequestList.as_view(), name="requests"),
+    path('requests/<int:pk>/', views.ImportRequestDetail.as_view(), name="request"),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
