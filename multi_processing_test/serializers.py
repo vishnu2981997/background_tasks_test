@@ -4,14 +4,14 @@ from .models import ImportRequest
 
 
 class ImportRequestSerializer(serializers.ModelSerializer):
-    owner = serializers.ReadOnlyField(source='owner.username')
-    url = serializers.EmailField(
+    # owner = serializers.ReadOnlyField(source='owner.username')
+    url = serializers.CharField(
         required=True,
     )
-    access_token = serializers.EmailField(
+    access_token = serializers.CharField(
         required=True,
     )
-    queue_url = serializers.EmailField(
+    queue_url = serializers.CharField(
         required=True,
     )
 
@@ -22,8 +22,8 @@ class ImportRequestSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ImportRequest
+        # add "owner" to fields to display ownership
         fields = [
-            "owner",
             "id",
             "url",
             "access_token",
