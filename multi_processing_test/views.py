@@ -40,6 +40,6 @@ class ImportRequestDetail(generics.RetrieveUpdateDestroyAPIView):
         # return ImportRequest.objects.all().order_by('id')
 
 
-@background(schedule=60)
+@background(schedule=10)
 def execute_task():
-    print("*" * 50)
+    print("background_task_executed")
